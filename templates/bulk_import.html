@@ -1,0 +1,15 @@
+<!-- yourappname/templates/bulk_import.html -->
+{% extends 'base.html' %}
+
+{% block title %}Bulk Import{% endblock %}
+
+{% block header %}Bulk Import{% endblock %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="csv_file">Upload CSV File:</label>
+    <input type="file" name="csv_file" accept=".csv">
+    <input type="submit" value="Upload">
+  </form>
+{% endblock %}
